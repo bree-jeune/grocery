@@ -75,7 +75,7 @@
     <h2>Oops! We can't find that page.</h2>
     <img src="${pageContext.request.contextPath}../resources/images/empty-cart.png" alt="Empty Cart">
     <p>It looks like the page you were looking for is out of stock, just like that item in your cart last week!</p>
-    <a href="${pageContext.request.contextPath}/">Back to Home</a>
+    <a href="${pageContext.request.contextPath}/home">Back to Home</a>
 </div>
 </body>
 
