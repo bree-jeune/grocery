@@ -1,0 +1,80 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f7f7f7;
+}
+
+.admin-dashboard {
+    display: flex;
+}
+
+#sidebar {
+    width: 250px;
+    background: #361040;
+    color: #ffffff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #281130;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#sidebar ul li a:hover {
+    background: #ff5b7d;
+}
+
+#sidebar ul li.active > a {
+    background: #ff5b7d;
+    color: #ffffff;
+}
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+.content-area h2 {
+    color: #361040;
+    margin-bottom: 30px;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card .card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.navbar {
+    padding: 15px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
