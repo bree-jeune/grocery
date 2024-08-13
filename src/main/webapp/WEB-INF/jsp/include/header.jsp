@@ -7,20 +7,20 @@
 <head>
     <meta charset="UTF-8">
     <title><spring:message code="application.title"/></title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}..resources/css/styles.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}..resources/css/bootstrap.min.css">
 </head>
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="${pageContext.request.contextPath}/home">Grocery Store</a>
+        <a class="navbar-brand" href="${pageContext.request.contextPath}/">Grocery Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/home">Home</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/product/list">Products</a>

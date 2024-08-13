@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/admin/dashboard")
+@RequestMapping("/dashboard")
 public class AdminController {
 
     @Autowired
@@ -24,6 +24,6 @@ public class AdminController {
         model.addAttribute("totalProducts", totalProducts);
         model.addAttribute("totalOrders", totalOrders);
 
-        return "admin_dashboard";
+        return "admin/dashboard";
     }
 }

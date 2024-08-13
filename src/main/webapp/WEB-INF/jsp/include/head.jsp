@@ -15,13 +15,12 @@
 <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/favicon.png" type="image/x-icon">
 
 <!-- CSS Links -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/responsive.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}..resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}..resources/css/style.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}..resources/css/responsive.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}..resources/css/font-awesome.min.css">
 
-<!-- Optional JS  -->
-<!-- <script src="${pageContext.request.contextPath}/resources/js/modernizr.js"></script> -->
+<script src="${pageContext.request.contextPath}..resources/js/modernizr.js"></script> -->
 
 <!-- Page-Specific Styles or Scripts (Placeholder) -->
 <c:if test="${pageSpecificStyles != null}">
