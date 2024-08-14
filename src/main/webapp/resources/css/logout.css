@@ -1,0 +1,26 @@
+/* logout.css */
+.card::before {
+    content: '';
+    background-image: url('../images/closed(1).png');
+    background-position: center;
+    background-size: cover;
+    display: block;
+    height: 200px;
+    width: 100%;
+}
+
+.card-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-body p {
+    font-size: 18px;
+    color: #666;
+}
+
+.btn-primary {
+    background-color: #ffc107; /* or another color you prefer */
+    border-color: #ffc107;
+}

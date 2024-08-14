@@ -77,9 +77,9 @@
 <div class="error-container">
     <h1>500</h1>
     <h2>Uh-oh! Something went wrong in our stockroom.</h2>
-    <img src="${pageContext.request.contextPath}../resources/images/wet-floor.png" alt="Wet Floor Sign">
+    <img src="${pageContext.request.contextPath}resources/images/wet-floor.png" alt="Wet Floor Sign">
     <p>It looks like something broke in our system, just like that bag of groceries that spilled on the floor!</p>
-    <a href="${pageContext.request.contextPath}/home">Back to Home</a>
+    <a href="${pageContext.request.contextPath}/">Back to Home</a>
 </div>
 </body>
 

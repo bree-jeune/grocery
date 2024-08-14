@@ -38,8 +38,9 @@ public class ProductServiceTest {
         milk.setProductTitle("Milk");
         milk.setProductDescription("A gallon of milk");
         milk.setProductPricePerItem(new BigDecimal("3.99"));
-        milk.setImageUrl("https://example.com/milk.jpg");
         milk.setProductMfdDate(LocalDate.now());  // Set the manufacturing date
+        milk.setProductStock(100);  // Set the stock quantity
+        milk.setImageUrl("https://example.com/milk.jpg");
 
         milk.getCategories().add(dairy);
         productDao.save(milk);
@@ -62,8 +63,9 @@ public class ProductServiceTest {
         milk.setProductTitle("Milk");
         milk.setProductDescription("A gallon of milk");
         milk.setProductPricePerItem(new BigDecimal("3.99"));
-        milk.setImageUrl("https://example.com/milk.jpg");
         milk.setProductMfdDate(LocalDate.now());  // Set the manufacturing date
+        milk.setProductStock(100);  // Set the stock quantity
+        milk.setImageUrl("https://example.com/milk.jpg");
 
         milk.getCategories().add(dairy);
         milk.getCategories().add(bakery);

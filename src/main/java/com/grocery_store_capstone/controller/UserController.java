@@ -51,4 +51,9 @@ public class UserController {
         model.addAttribute("totalUsers", totalUsers);
         return "admin_dashboard";
     }
+
+    @GetMapping("/register")
+    public String showRegisterPage() {
+        return "register";
+    }
 }

@@ -1,10 +1,12 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<c:set var="pageContent" value="content/home.jsp"/>
-<c:set var="pageTitle" value="Home - The Neighborhood Nook"/>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard - The Neighborhood Nook</title>
+    <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/dashboard.css" rel="stylesheet">
+</head>
+<body>
 <div class="admin-dashboard">
     <nav id="sidebar">
         <div class="sidebar-header">
@@ -12,19 +14,25 @@
         </div>
         <ul class="list-unstyled components">
             <li class="active">
-                <a href="${pageContext.request.contextPath}/admin/dashboard">Dashboard</a>
+                <a href="${pageContext.request.contextPath}/dashboard">Dashboard</a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/admin/users">Users</a>
+                <a href="${pageContext.request.contextPath}/dashboard/users">Users</a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/admin/products">Products</a>
+                <a href="${pageContext.request.contextPath}/dashboard/products">Products</a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/admin/orders">Orders</a>
+                <a href="${pageContext.request.contextPath}/dashboard/orders">Orders</a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/admin/reports">Reports</a>
+                <a href="${pageContext.request.contextPath}/dashboard/inventory">Inventory</a>
+            </li>
+            <li>
+                <a href="${pageContext.request.contextPath}/dashboard/reports">Reports</a>
+            </li>
+            <li>
+                <a href="${pageContext.request.contextPath}/dashboard/settings">Settings</a>
             </li>
             <li>
                 <a href="${pageContext.request.contextPath}/logout">Logout</a>
@@ -73,8 +81,8 @@
     </div>
 </div>
 
-<script src="${pageContext.request.contextPath}resources/js/jquery-3.4.1.min.js"></script>
-<script src="${pageContext.request.contextPath}resources/js/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/bootstrap.js"></script>
 <script>
     $(document).ready(function () {
         $('#sidebarCollapse').on('click', function () {
@@ -83,5 +91,4 @@
     });
 </script>
 </body>
-
 </html>
