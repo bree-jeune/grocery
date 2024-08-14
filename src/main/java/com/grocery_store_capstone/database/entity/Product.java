@@ -2,6 +2,7 @@ package com.grocery_store_capstone.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.Set;
 
 import java.math.BigDecimal;
 
@@ -57,6 +58,15 @@ public class Product {
     @Getter
     @Column(name = "product_image_url")
     private String productImageUrl;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "product_category",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+    private Set<Category> categories;
+
 
     public Product(String productCode, String productTitle, BigDecimal productPricePerItem, Integer productStock, String productDescription, String productMfdDate, String productExpDate, String productCompany, String productImageUrl, Category category) {
         this.productCode = productCode;

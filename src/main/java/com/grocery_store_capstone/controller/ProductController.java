@@ -24,23 +24,35 @@ public class ProductController {
         this.productDao = productDao;
     }
 
-    @GetMapping("/product/create")
+    // Display the form to create a new product
+    @GetMapping("/create")
     public String showCreateProductForm(Model model) {
         CreateProductFormBean form = new CreateProductFormBean();
         model.addAttribute("form", form);
         return "product/create";
     }
 
-    @PostMapping("/product/create")
-    public String submitCreateProductForm(@ModelAttribute("form") CreateProductFormBean form, BindingResult result) {
+    // Handle the form submission for creating a new product
+    @PostMapping("/create")
+    public String submitCreateProductForm(@Valid @ModelAttribute("form") CreateProductFormBean form, BindingResult result) {
         if (result.hasErrors()) {
             return "product/create";
         }
+
+        Product product = new Product();
+        product.setProductTitle(form.getName());
+        product.setProductDescription(form.getDescription());
+        product.setProductPricePerItem(form.getPrice());
+        product.setProductImageUrl(form.getImageUrl());
+
+        productDao.save(product);
+
         return "redirect:/product/list";
     }
 
-    @GetMapping("/create")
-    public ModelAndView createProduct(@RequestParam(required = false) Long id) {
+    // Display the form to edit an existing product
+    @GetMapping("/edit")
+    public ModelAndView editProduct(@RequestParam(required = false) Long id) {
         ModelAndView response = new ModelAndView("product/create");
 
         CreateProductFormBean formBean = new CreateProductFormBean();
@@ -62,8 +74,9 @@ public class ProductController {
         return response;
     }
 
-    @PostMapping("/createSubmit")
-    public ModelAndView createProductSubmit(@Valid @ModelAttribute("form") CreateProductFormBean form, BindingResult bindingResult) {
+    // Handle the form submission for updating an existing product
+    @PostMapping("/editSubmit")
+    public ModelAndView editProductSubmit(@Valid @ModelAttribute("form") CreateProductFormBean form, BindingResult bindingResult) {
         ModelAndView response = new ModelAndView("product/create");
 
         if (bindingResult.hasErrors()) {

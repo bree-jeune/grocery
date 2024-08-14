@@ -3,6 +3,8 @@ package com.grocery_store_capstone.database.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "category")
 @Getter
@@ -22,6 +24,9 @@ public class Category {
 
     @Column(name = "category_description")
     private String description;
+
+    @ManyToMany(mappedBy = "categories")
+    private Set<Product> products;
 
     public Category(String name, String description) {
         this.name = name;
