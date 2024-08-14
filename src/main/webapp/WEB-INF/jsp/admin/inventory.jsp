@@ -27,7 +27,6 @@
 <div class="container">
     <h2 class="mt-4">Inventory Management</h2>
 
-    <!-- Search and Filter -->
     <div class="row mb-3">
         <div class="col-md-4">
             <input type="text" class="form-control" placeholder="Search by product name or category...">
@@ -38,7 +37,6 @@
                 <option value="Dairy">Dairy</option>
                 <option value="Bakery">Bakery</option>
                 <option value="Produce">Produce</option>
-                <!-- Add more categories as needed -->
             </select>
         </div>
         <div class="col-md-4 text-right">
@@ -46,7 +44,6 @@
         </div>
     </div>
 
-    <!-- Inventory Table -->
     <table class="table table-striped table-bordered inventory-table">
         <thead>
         <tr>
@@ -79,7 +76,6 @@
         </tbody>
     </table>
 
-    <!-- Pagination (Optional) -->
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
             <li class="page-item disabled">

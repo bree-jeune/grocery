@@ -13,7 +13,6 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card mt-5">
-                <!-- Illustration -->
                 <div class="card-header text-center">
                     <h3>Goodbye!</h3>
                 </div>

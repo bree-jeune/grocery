@@ -20,13 +20,13 @@ public class CustomerDAOTest {
     public void testCreateCustomer() {
         Customer customer = new Customer();
         customer.setCustomerName("John Doe");
-        customer.setEmail("john.doe@example.com"); // Set the email
+        customer.setEmail("john.doe@example.com");
         customer.setPhone("555-555-5555");
 
         Customer savedCustomer = customerDao.save(customer);
 
         assertNotNull(savedCustomer);
-        assertEquals("john.doe@example.com", savedCustomer.getEmail()); // Verify the email
+        assertEquals("john.doe@example.com", savedCustomer.getEmail());
     }
 
 }

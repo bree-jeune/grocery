@@ -16,7 +16,6 @@ import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 @Slf4j
 @Controller
-// the @ControllerAdvice annotation is used to define as an exception handler
 @ControllerAdvice
 public class ErrorController {
 

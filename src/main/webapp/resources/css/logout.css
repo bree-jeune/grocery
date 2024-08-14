@@ -1,7 +1,6 @@
-/* logout.css */
 .card::before {
     content: '';
-    background-image: url('../images/closed(1).png');
+    background-image: url('../images/closed.png');
     background-position: center;
     background-size: cover;
     display: block;
@@ -21,6 +20,6 @@
 }
 
 .btn-primary {
-    background-color: #ffc107; /* or another color you prefer */
+    background-color: #ffc107;
     border-color: #ffc107;
 }

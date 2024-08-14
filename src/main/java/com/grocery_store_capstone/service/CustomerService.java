@@ -1,4 +1,4 @@
-package com.grocery_store_capstone.service.employeemanagementsystem;
+package com.grocery_store_capstone.service;
 
 import com.grocery_store_capstone.database.dao.CustomerDAO;
 import com.grocery_store_capstone.database.entity.Customer;

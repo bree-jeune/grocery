@@ -1,9 +1,7 @@
-/* Add some padding between the sidebar and main content */
 #content {
     padding-left: 250px; /* Ensure the content starts after the sidebar */
 }
 
-/* Sidebar styling */
 #sidebar {
     background-color: #333;
     color: #fff;
@@ -38,7 +36,6 @@
     color: #fff;
 }
 
-/* Neutral color scheme for content cards */
 .card {
     margin-bottom: 20px;
 }
@@ -55,7 +52,6 @@
     background-color: #ffc107;
 }
 
-/* Main content area adjustments */
 .content-area {
     padding: 20px;
     background-color: #f8f9fa;

@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
     <style>
-        /* Custom inline styles */
         h1 {
-            color: #4CAF50; /* Green color to match your site theme */
+            color: #4CAF50;
             text-align: center;
             margin-top: 20px;
             font-weight: bold;
@@ -52,7 +51,6 @@
             background-color: rgba(0, 0, 0, 0.05);
         }
 
-        /* Add some padding to the cells */
         td, th {
             padding: 15px;
         }

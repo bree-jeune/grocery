@@ -1,4 +1,4 @@
-package com.grocery_store_capstone.service.employeemanagementsystem;
+package com.grocery_store_capstone.service;
 
 import java.util.Arrays;
 import java.util.List;

@@ -14,7 +14,7 @@ body {
 }
 
 .card-header {
-    background-color: #ffcc00; /* Same yellow color as the 500 page */
+    background-color: #ffcc00;
     color: #333333;
     font-weight: bold;
     border-top-left-radius: 15px;
@@ -46,7 +46,7 @@ body {
 }
 
 .btn-primary {
-    background-color: #ffcc00; /* Matching yellow color */
+    background-color: #ffcc00;
     border: none;
     border-radius: 10px;
     padding: 10px 0;
@@ -55,16 +55,16 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #e6b800; /* Darker shade of yellow for hover */
+    background-color: #e6b800;
 }
 
 .card-footer a {
-    color: #ffcc00; /* Yellow color for the link */
+    color: #ffcc00;
     text-decoration: none;
 }
 
 .card-footer a:hover {
-    color: #e6b800; /* Darker shade on hover */
+    color: #e6b800;
     text-decoration: underline;
 }
 

@@ -8,6 +8,6 @@ public class OffersController {
 
     @GetMapping("/offers")
     public String offersPage() {
-        return "offers";  // This should match the name of your JSP file without the .jsp extension
+        return "offers";
     }
 }

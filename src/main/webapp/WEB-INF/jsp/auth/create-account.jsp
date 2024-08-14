@@ -2,7 +2,6 @@
 
 <jsp:include page="../include/header.jsp" />
 
-<!-- a page header -->
 <section style="background-color:gray">
     <div class="container">
         <div class="row pt-5 pb-5">
@@ -40,7 +39,6 @@
                     </c:if>
 
 
-                    <!-- password input field -->
                     <div class="row align-items-center justify-content-center pt-3">
                         <div class="col-2">
                             <label for="passwordId" class="col-form-label">Password</label>

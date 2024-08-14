@@ -1,18 +1,15 @@
-/* Reset and Box-Sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
     color: #333;
 }
 
-/* Container */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -20,7 +17,6 @@ body {
     padding: 20px;
 }
 
-/* Header Styling */
 header {
     background-color: #006600;
     padding: 20px;
@@ -28,7 +24,6 @@ header {
     color: white;
 }
 
-/* Navigation Bar */
 nav {
     margin: 20px 0;
 }
@@ -53,7 +48,6 @@ nav ul li a:hover {
     color: #ff9900;
 }
 
-/* Hero Area */
 .hero_area {
     background-color: #009900;
     color: white;
@@ -131,7 +125,6 @@ nav ul li a:hover {
     background-color: #007a00;
 }
 
-/* Featured Products Section */
 .featured_section {
     background-color: #f3f3f3;
     padding: 50px 20px;
@@ -188,7 +181,6 @@ nav ul li a:hover {
     border-color: #cc7a00;
 }
 
-/* Special Offers Section */
 .offers_section {
     background-color: white;
     padding: 50px 20px;
@@ -222,7 +214,6 @@ nav ul li a:hover {
     background-color: #cc7a00;
 }
 
-/* Testimonials Section */
 .testimonials_section {
     background-color: #f3f3f3;
     padding: 50px 20px;
@@ -241,7 +232,6 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-/* CTA Section */
 .cta_section {
     background-color: #009900;
     color: white;
@@ -280,7 +270,6 @@ nav ul li a:hover {
     background-color: #cc7a00;
 }
 
-/* Footer Section */
 footer {
     background-color: #006600;
     color: white;
@@ -302,7 +291,6 @@ footer a:hover {
     color: #cc7a00;
 }
 
-/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
     .hero_area {
         padding: 30px 0;
@@ -317,7 +305,6 @@ footer a:hover {
         margin-bottom: 10px;
     }
 
-    /* Grid Layout for Sections */
     .content {
         display: grid;
         grid-template-columns: 1fr;
@@ -327,23 +314,20 @@ footer a:hover {
         padding: 20px;
     }
 
-    /* For larger screens, stack the sections vertically */
     @media (min-width: 768px) {
         .content {
             grid-template-columns: 1fr 1fr;
         }
     }
 
-    /* For extra large screens, use a three-column layout */
     @media (min-width: 1024px) {
         .content {
             grid-template-columns: 1fr 1fr 1fr;
         }
     }
 
-    /* Individual Section Styling */
     .hero_area {
-        grid-column: 1 / -1; /* Span full width on all screen sizes */
+        grid-column: 1 / -1;
     }
 
     .about_section, .featured_section, .offers_section, .testimonials_section, .cta_section {
@@ -353,7 +337,6 @@ footer a:hover {
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* Adjusting Buttons for Sections */
     .btn-box {
         text-align: center;
         margin-top: 20px;
@@ -372,7 +355,6 @@ footer a:hover {
     }
 }
 
-/* Custom styles for the navigation bar */
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;

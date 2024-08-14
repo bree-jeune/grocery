@@ -1,5 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
-<jsp:include page="jsp/include/header.jsp" />
 <section class="featured_section layout_padding">
     <div class="container">
         <div class="heading_container heading_center">

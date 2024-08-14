@@ -3,7 +3,6 @@
 <html lang="en">
 
 <head>
-    <!-- Basic Meta Tags -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -11,23 +10,17 @@
     <meta name="description" content="Learn more about The Neighborhood Nook, your go-to grocery store for fresh produce and quality goods." />
     <meta name="author" content="The Neighborhood Nook" />
 
-    <!-- Favicon -->
     <link rel="shortcut icon" href="<%= request.getContextPath() %>/images/favicon.png" type="image/x-icon">
     <title>The Neighborhood Nook | About Us</title>
 
-    <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/bootstrap.css" />
 
-    <!-- Owl Carousel -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
-    <!-- Font Awesome Icons -->
     <link href="<%= request.getContextPath() %>/css/font-awesome.min.css" rel="stylesheet" />
 
-    <!-- Custom Styles for this Template -->
     <link href="<%= request.getContextPath() %>/css/style.css" rel="stylesheet" />
 
-    <!-- Responsive Styles -->
     <link href="<%= request.getContextPath() %>/css/responsive.css" rel="stylesheet" />
 </head>
 

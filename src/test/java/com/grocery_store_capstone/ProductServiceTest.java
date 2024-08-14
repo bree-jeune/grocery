@@ -34,12 +34,12 @@ public class ProductServiceTest {
 
         Product milk = new Product();
         milk.setProductCode("MILK001");
-        milk.setProductCompany("DairyLand");  // Set the company
+        milk.setProductCompany("DairyLand");
         milk.setProductTitle("Milk");
         milk.setProductDescription("A gallon of milk");
         milk.setProductPricePerItem(new BigDecimal("3.99"));
-        milk.setProductMfdDate(LocalDate.now());  // Set the manufacturing date
-        milk.setProductStock(100);  // Set the stock quantity
+        milk.setProductMfdDate(LocalDate.now());
+        milk.setProductStock(100);
         milk.setImageUrl("https://example.com/milk.jpg");
 
         milk.getCategories().add(dairy);
@@ -59,12 +59,12 @@ public class ProductServiceTest {
 
         Product milk = new Product();
         milk.setProductCode("MILK001");
-        milk.setProductCompany("DairyLand");  // Set the company
+        milk.setProductCompany("DairyLand");
         milk.setProductTitle("Milk");
         milk.setProductDescription("A gallon of milk");
         milk.setProductPricePerItem(new BigDecimal("3.99"));
-        milk.setProductMfdDate(LocalDate.now());  // Set the manufacturing date
-        milk.setProductStock(100);  // Set the stock quantity
+        milk.setProductMfdDate(LocalDate.now());
+        milk.setProductStock(100);
         milk.setImageUrl("https://example.com/milk.jpg");
 
         milk.getCategories().add(dairy);

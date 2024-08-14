@@ -34,17 +34,14 @@ public class OrderDAOTest {
 
     @Test
     public void testCreateOrder() {
-        // Set up a new Order
         Order order = new Order();
 
-        // Convert LocalDate to Date
         LocalDate localDate = LocalDate.now();
         Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
         order.setOrderDate(date);
 
         order.setStatus("Processing");
 
-        // Create and save a new Customer
         Customer customer = new Customer();
         customer.setCustomerName("John Doe");
         customer.setEmail("john.doe@example.com");
@@ -52,13 +49,10 @@ public class OrderDAOTest {
 
         Customer savedCustomer = customerDao.saveAndFlush(customer); // Ensure the customer is saved
 
-        // Set the saved customer to the order
         order.setCustomer(savedCustomer);
 
-        // Save the order
         Order savedOrder = orderDao.save(order);
 
-        // Verify the order is saved correctly
         assertNotNull(savedOrder);
         assertEquals(order.getStatus(), savedOrder.getStatus());
         assertNotNull(savedOrder.getCustomer());
@@ -67,16 +61,13 @@ public class OrderDAOTest {
 
     @Test
     public void testReadOrder() {
-        // Set up a new Order
         Order order = new Order();
 
-        // Convert LocalDate to Date
         LocalDate localDate = LocalDate.now();
         Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
         order.setOrderDate(date);
         order.setStatus("Processing");
 
-        // Create and save a new Customer
         Customer customer = new Customer();
         customer.setCustomerName("John Doe");
         customer.setEmail("john.doe@example.com");
@@ -84,13 +75,10 @@ public class OrderDAOTest {
 
         Customer savedCustomer = customerDao.saveAndFlush(customer); // Ensure the customer is saved
 
-        // Set the saved customer to the order
         order.setCustomer(savedCustomer);
 
-        // Save the order
         Order savedOrder = orderDao.save(order);
 
-        // Read the order back by ID
         Optional<Order> fetchedOrder = orderDao.findById(savedOrder.getId());
         assertTrue(fetchedOrder.isPresent());
         assertEquals(savedOrder.getId(), fetchedOrder.get().getId());
@@ -98,7 +86,6 @@ public class OrderDAOTest {
 
     @Test
     public void testDeleteOrder() {
-        // Assuming you have an order with ID 1
         orderDao.deleteById(1L);
         Optional<Order> order = orderDao.findById(1L);
         assertFalse(order.isPresent());
@@ -107,17 +94,14 @@ public class OrderDAOTest {
     @ParameterizedTest
     @ValueSource(strings = {"Processing", "Shipped", "Delivered"})
     public void testParameterizedOrderCreation(String status) {
-        // Set up a new Order
         Order order = new Order();
 
-        // Convert LocalDate to Date
         LocalDate localDate = LocalDate.now();
         Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
         order.setOrderDate(date);
 
         order.setStatus(status);
 
-        // Create and save a new Customer
         Customer customer = new Customer();
         customer.setCustomerName("John Doe");
         customer.setEmail("john.doe@example.com");
@@ -125,13 +109,10 @@ public class OrderDAOTest {
 
         Customer savedCustomer = customerDao.saveAndFlush(customer); // Ensure the customer is saved
 
-        // Set the saved customer to the order
         order.setCustomer(savedCustomer);
 
-        // Save the order
         Order savedOrder = orderDao.save(order);
 
-        // Verify the order is saved correctly
         assertNotNull(savedOrder);
         assertEquals(status, savedOrder.getStatus());
     }

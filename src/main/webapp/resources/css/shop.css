@@ -1,4 +1,3 @@
-/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     color: #333;
@@ -10,7 +9,6 @@ h2 {
     font-weight: bold;
 }
 
-/* Header Styles */
 .header_section {
     background-color: #28a745;
     color: #fff;
@@ -31,7 +29,6 @@ h2 {
     color: #ffc107;
 }
 
-/* Fruits Section Styles */
 .fruits_section {
     padding: 60px 0;
     background-color: #fff;
@@ -91,7 +88,6 @@ h2 {
     background-color: #218838;
 }
 
-/* Button Styles */
 .btn-box a {
     background-color: #28a745;
     color: #fff;

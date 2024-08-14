@@ -23,18 +23,15 @@ public class ProductDAOTest {
 
     @BeforeEach
     public void setup() {
-        // You can initialize some common setup data here if needed
     }
 
     @AfterEach
     public void cleanup() {
-        // Clean up the database after each test to maintain isolation
         productDAO.deleteAll();
     }
 
     @Test
     public void testCreateMultipleProducts() {
-        // Create and save a product
         Product product1 = new Product();
         product1.setProductCode("P001");
         product1.setProductCompany("Company A");
@@ -55,11 +52,9 @@ public class ProductDAOTest {
         product2.setProductStock(50);
         product2.setProductTitle("Product 2");
 
-        // Save the products
         productDAO.save(product1);
         productDAO.save(product2);
 
-        // Fetch and assert
         List<Product> products = productDAO.findAll();
         assertEquals(2, products.size());
         assertNotNull(products.get(0).getProductId());
@@ -68,7 +63,6 @@ public class ProductDAOTest {
 
     @Test
     public void testStreamExample() {
-        // Create and save a product
         Product product = new Product();
         product.setProductCode("P003");
         product.setProductCompany("Company C");
@@ -81,7 +75,6 @@ public class ProductDAOTest {
 
         productDAO.save(product);
 
-        // Fetch products and use stream example
         List<Product> products = productDAO.findAll();
         products.stream()
                 .filter(p -> p.getProductStock() > 100)
