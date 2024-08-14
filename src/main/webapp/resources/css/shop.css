@@ -1,0 +1,105 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+h2 {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Header Styles */
+.header_section {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.header_section .navbar-brand {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.header_section .navbar-nav .nav-link {
+    color: #fff;
+    margin-right: 15px;
+}
+
+.header_section .navbar-nav .nav-link:hover {
+    color: #ffc107;
+}
+
+/* Fruits Section Styles */
+.fruits_section {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.fruits_section .heading_container {
+    margin-bottom: 40px;
+}
+
+.fruits_section .heading_container h2 {
+    font-size: 2.5rem;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.fruits_section .item .box {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.fruits_section .item .box:hover {
+    transform: translateY(-5px);
+}
+
+.fruits_section .item .box .img-box img {
+    max-width: 100%;
+    height: auto;
+}
+
+.fruits_section .item .box .detail-box h4 {
+    margin-top: 15px;
+    font-size: 1.25rem;
+    color: #28a745;
+}
+
+.fruits_section .item .box .detail-box .price {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #ff6b6b;
+}
+
+.fruits_section .item .box .detail-box a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.fruits_section .item .box .detail-box a:hover {
+    background-color: #218838;
+}
+
+/* Button Styles */
+.btn-box a {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-box a:hover {
+    background-color: #218838;
+}

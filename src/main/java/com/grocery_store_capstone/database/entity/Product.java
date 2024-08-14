@@ -96,4 +96,9 @@ public class Product {
     public Long getProductId() {
         return id;
     }
+
+    public BigDecimal getPrice() {
+        return this.productPricePerItem;
+    }
+
 }

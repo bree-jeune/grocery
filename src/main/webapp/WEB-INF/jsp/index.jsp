@@ -13,14 +13,59 @@
 
 
 <meta name="description" content="The Neighborhood Nook - Your go-to grocery store for fresh produce and quality goods.">
-<meta name="keywords" content="grocery, fresh produce, quality goods, shopping">
+<meta name="keywords" content="grocery, fresh produce, quality goods, shopping"
 
+<jsp:include page="include/header.jsp" />
+
+<%--<header class="header_section">--%>
+<%--    <div class="container">--%>
+<%--        <nav class="navbar navbar-expand-lg custom_nav-container">--%>
+<%--            <a class="navbar-brand" href="${pageContext.request.contextPath}/index.jsp"></a>--%>
+
+<%--            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"--%>
+<%--                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">--%>
+<%--                <span class="navbar-toggler-icon"></span>--%>
+<%--            </button>--%>
+
+<%--            <div class="collapse navbar-collapse" id="navbarSupportedContent">--%>
+<%--                <ul class="navbar-nav ml-auto">--%>
+<%--                    <li class="nav-item">--%>
+<%--                        <a class="nav-link" href="${pageContext.request.contextPath}/index.jsp">Home</a>--%>
+<%--                    </li>--%>
+<%--                    <li class="nav-item">--%>
+<%--                        <a class="nav-link" href="${pageContext.request.contextPath}/about.jsp">About</a>--%>
+<%--                    </li>--%>
+<%--                    <li class="nav-item">--%>
+<%--                        <a class="nav-link" href="${pageContext.request.contextPath}/shop">Shop</a>--%>
+<%--                    </li>--%>
+<%--                    <li class="nav-item">--%>
+<%--                        <a class="nav-link" href="${pageContext.request.contextPath}/blog.jsp">Blog</a>--%>
+<%--                    </li>--%>
+<%--                    <li class="nav-item">--%>
+<%--                        <a class="nav-link" href="${pageContext.request.contextPath}/cart.jsp">--%>
+<%--                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>--%>
+<%--                        </a>--%>
+<%--                    </li>--%>
+<%--                    <li class="nav-item">--%>
+<%--                        <form class="form-inline my-2 my-lg-0">--%>
+<%--                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">--%>
+<%--                            <button class="btn my-2 my-sm-0" type="submit">--%>
+<%--                                <i class="fa fa-search" aria-hidden="true"></i>--%>
+<%--                            </button>--%>
+<%--                        </form>--%>
+<%--                    </li>--%>
+<%--                </ul>--%>
+<%--            </div>--%>
+<%--        </nav>--%>
+<%--    </div>--%>
+<%--</header>--%>
 
 <div class="hero_area">
     <h1>Welcome to The Neighborhood Nook</h1>
     <p>Your go-to grocery store for fresh produce and quality goods.</p>
-    <a href="#" class="btn">Shop Now</a>
+    <a href="${pageContext.request.contextPath}/shop" class="btn">Shop Now</a>
 </div>
+
 
 <<div id="customCarousel1" class="carousel slide" data-ride="carousel">
 <div class="carousel-inner">

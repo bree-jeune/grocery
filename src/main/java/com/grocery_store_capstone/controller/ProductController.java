@@ -23,6 +23,12 @@ public class ProductController {
     private final ProductService productService;
     private final ProductDAO productDao;
 
+    @GetMapping("/product/list")
+    public String showProductList(Model model) {
+        // Add products to the model and return the view name
+        return "productList"; // Ensure "productList" is the correct view template
+    }
+
 
     @GetMapping("/addProductWithCategories")
     public String addProductWithCategories() {
