@@ -70,7 +70,8 @@ public class IndexController {
         log.debug("The user searched for the term: {}", search);
         response.addObject("search", search);
 
-        List<Product> products = productDao.findByProductTitleOrProductCode(search, search);
+        List<Product> products = productDao.searchProductsByTitleOrCode(search);
+
 
 
         products.stream().forEach(product -> log.debug("Product: {}", product.getProductTitle()));
@@ -80,14 +81,14 @@ public class IndexController {
     }
 
     @GetMapping("/file-upload")
-    public ModelAndView fileUpload(@RequestParam Integer employeeId) {
+    public ModelAndView fileUpload(@RequestParam Long employeeId) {
         ModelAndView response = new ModelAndView("file-upload");
         response.addObject("employeeId", employeeId);
         return response;
     }
 
     @PostMapping("/file-upload")
-    public ModelAndView fileUploadSubmit(@RequestParam MultipartFile file, @RequestParam Integer employeeId) {
+    public ModelAndView fileUploadSubmit(@RequestParam MultipartFile file, @RequestParam Long employeeId) {
         ModelAndView modelAndView = new ModelAndView("redirect:/employee/detail?employeeId=" + employeeId);
 
         String filename = file.getOriginalFilename();

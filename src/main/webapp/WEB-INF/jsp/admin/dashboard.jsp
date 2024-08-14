@@ -4,7 +4,6 @@
 <c:set var="pageContent" value="content/home.jsp"/>
 <c:set var="pageTitle" value="Home - The Neighborhood Nook"/>
 
-<jsp:include page="../mainLayout.jsp"/>
 
 <div class="admin-dashboard">
     <nav id="sidebar">
@@ -74,8 +73,8 @@
     </div>
 </div>
 
-<script src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}resources/js/jquery-3.4.1.min.js"></script>
+<script src="${pageContext.request.contextPath}resources/js/bootstrap.js"></script>
 <script>
     $(document).ready(function () {
         $('#sidebarCollapse').on('click', function () {

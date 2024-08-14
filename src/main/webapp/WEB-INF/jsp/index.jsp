@@ -4,8 +4,6 @@
 <c:set var="pageContent" value="content/home.jsp"/>
 <c:set var="pageTitle" value="Home - The Neighborhood Nook"/>
 
-<jsp:include page="mainLayout.jsp"/>
-
 <meta name="description" content="The Neighborhood Nook - Your go-to grocery store for fresh produce and quality goods.">
 <meta name="keywords" content="grocery, fresh produce, quality goods, shopping">
 

@@ -1,4 +1,4 @@
-package com.grocery_store_capstone.service.employeemanagementsystem;
+package com.grocery_store_capstone.service;
 
 import com.grocery_store_capstone.database.entity.Department;
 import com.grocery_store_capstone.form.CreateEmployeeFormBean;
@@ -9,6 +9,7 @@ import com.grocery_store_capstone.database.entity.Employee;
 import com.grocery_store_capstone.database.dao.DepartmentDAO;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeService {
@@ -41,7 +42,14 @@ public class EmployeeService {
             employee.setDepartment(department);
         }
 
-        employee = employeeDAO.save(employee);
-        return employee;
+        return employeeDAO.save(employee);
     }
+
+
+    public Employee getEmployeeById(Long id) {
+        Optional<Employee> employee = employeeDAO.findById(id);
+        return employee.orElse(null);
+    }
+
+
 }

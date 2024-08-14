@@ -26,6 +26,9 @@ public interface OrderDAO extends JpaRepository<Order, Long> {
     Double getOrderTotal(@Param("orderId") Long orderId);
 
     @Query("SELECT o FROM Order o WHERE o.status = :status")
+    List<Order> findOrdersByStatus(@Param("status") String status);
+
+    @Query("SELECT o FROM Order o WHERE o.status = :status")
     Order findOrderInCartStatus(@Param("status") Integer status);
 
 }

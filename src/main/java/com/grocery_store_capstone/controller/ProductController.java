@@ -3,7 +3,7 @@ package com.grocery_store_capstone.controller;
 import com.grocery_store_capstone.database.dao.ProductDAO;
 import com.grocery_store_capstone.database.entity.Product;
 import com.grocery_store_capstone.form.CreateProductFormBean;
-import com.grocery_store_capstone.service.employeemanagementsystem.ProductService;
+import com.grocery_store_capstone.service.ProductService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +22,13 @@ public class ProductController {
 
     private final ProductService productService;
     private final ProductDAO productDao;
+
+
+    @GetMapping("/addProductWithCategories")
+    public String addProductWithCategories() {
+        productService.addProductWithCategories();
+        return "redirect:/product/list"; // Redirect to product listing page after adding
+    }
 
     @Autowired
     public ProductController(ProductService productService, ProductDAO productDao) {

@@ -5,11 +5,12 @@ import com.grocery_store_capstone.database.dao.EmployeeDAO;
 import com.grocery_store_capstone.database.entity.Department;
 import com.grocery_store_capstone.database.entity.Employee;
 import com.grocery_store_capstone.form.CreateEmployeeFormBean;
-import com.grocery_store_capstone.service.employeemanagementsystem.EmployeeService;
+import com.grocery_store_capstone.service.EmployeeService;
 import jakarta.annotation.*;
 import jakarta.validation.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.*;
 import org.springframework.web.bind.annotation.*;
@@ -32,11 +33,11 @@ public class EmployeeController {
 
     @PostConstruct
     public void init() {
-        // Initialization code if needed
+
     }
 
     @GetMapping("/detail")
-    public ModelAndView detail(@RequestParam Integer employeeId) {
+    public ModelAndView detail(@RequestParam Long employeeId) {
         ModelAndView response = new ModelAndView("employee/detail");
 
         Employee employee = employeeDAO.findById(employeeId).orElse(null);
@@ -58,7 +59,7 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
-    public ModelAndView edit(@RequestParam(required = false) Integer employeeId) {
+    public ModelAndView edit(@RequestParam(required = false) Long employeeId) {
         ModelAndView response = new ModelAndView("employee/create");
 
         loadDropdowns(response);
@@ -72,7 +73,7 @@ public class EmployeeController {
                 form.setFirstName(employee.getFirstName());
                 form.setLastName(employee.getLastName());
                 form.setReportsTo(employee.getReportsTo());
-                form.setDepartmentId(employee.getDepartment().getId());
+                form.setDepartmentId((long) employee.getDepartment().getId());
                 response.addObject("form", form);
             } else {
                 response.addObject("errorMessage", "Employee not found.");
@@ -116,4 +117,14 @@ public class EmployeeController {
         List<Department> departments = departmentDAO.findAll();
         response.addObject("departments", departments);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
+        Employee employee = employeeService.getEmployeeById(id);
+        if (employee == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(employee);
+    }
+
 }

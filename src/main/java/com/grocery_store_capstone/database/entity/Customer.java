@@ -29,6 +29,10 @@ public class Customer {
     @Column(name = "contact_lastname")
     private String contactLastname;
 
+    @Setter
+    @Getter
+    private String email;
+
     @Column(name = "phone")
     private String phone;
 
@@ -49,4 +53,5 @@ public class Customer {
 
     @Column(name = "country")
     private String country;
+
 }

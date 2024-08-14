@@ -15,7 +15,7 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "employee_id")
-    private int id;
+    private Long id;
 
     @Column(name = "employee_first_name", nullable = false)
     private String firstName;
@@ -39,6 +39,11 @@ public class Employee {
     @Setter
     @Getter
     @Column(name = "reports_to")
-    private Integer reportsTo;
+    private Long reportsTo;
 
+    public void setName(String johnDoe) {
+    }
+
+    public void setPosition(String developer) {
+    }
 }

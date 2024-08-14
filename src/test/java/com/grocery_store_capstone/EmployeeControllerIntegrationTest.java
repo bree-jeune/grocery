@@ -1,11 +1,11 @@
 package com.grocery_store_capstone;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.grocery_store_capstone.database.entity.Employee;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -15,10 +15,13 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.web.client.HttpClientErrorException;
 
-@RunWith(SpringRunner.class)
+import java.util.Arrays;
+import java.util.List;
+
+@ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = GroceryStoreCapstoneApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class EmployeeControllerIntegrationTest {
 
@@ -44,22 +47,21 @@ public class EmployeeControllerIntegrationTest {
 
 	@Test
 	public void testGetEmployeeById() {
-		Employee employee = restTemplate.getForObject(getRootUrl() + "/employees/1", Employee.class);
-		assertNotNull(employee);
+		ResponseEntity<Employee> response = restTemplate.getForEntity("/api/employee/1", Employee.class);
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertNotNull(response.getBody());
 	}
 
 	@Test
 	public void testCreateEmployee() {
 		Employee employee = new Employee();
-		employee.setFirstName("John");
-		employee.setLastName("Doe");
-		employee.setJobTitle("Manager");
+		employee.setName("John Doe");
+		employee.setPosition("Developer");
 
-		ResponseEntity<Employee> postResponse = restTemplate.postForEntity(getRootUrl() + "/employees", employee, Employee.class);
-		assertNotNull(postResponse);
-		assertNotNull(postResponse.getBody());
+		ResponseEntity<Employee> response = restTemplate.postForEntity("/api/employee", employee, Employee.class);
+		assertEquals(HttpStatus.CREATED, response.getStatusCode());
+		assertNotNull(response.getBody());
 	}
-
 	@Test
 	public void testUpdateEmployee() {
 		int id = 1;
@@ -87,4 +89,11 @@ public class EmployeeControllerIntegrationTest {
 			assertEquals(HttpStatus.NOT_FOUND, e.getStatusCode());
 		}
 	}
+
+	@Test
+	public void testLambdaExample() {
+		List<String> names = Arrays.asList("John", "Jane", "Doe");
+		names.forEach(name -> System.out.println("Hello, " + name));
+	}
+
 }

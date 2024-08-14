@@ -6,7 +6,7 @@ import com.grocery_store_capstone.database.entity.Order;
 import com.grocery_store_capstone.database.entity.OrderDetail;
 import com.grocery_store_capstone.form.OrderForm;
 import com.grocery_store_capstone.security.AuthenticatedUserUtilities;
-import com.grocery_store_capstone.service.employeemanagementsystem.OrderService;
+import com.grocery_store_capstone.service.OrderService;
 import com.grocery_store_capstone.database.entity.User;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -14,10 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -37,6 +34,13 @@ public class OrderController {
 
     @Autowired
     private AuthenticatedUserUtilities authenticatedUserUtilities;
+
+    @GetMapping("/order/in-cart")
+    public Order getOrderInCartStatus(@RequestParam("status") Integer status) {
+        Order order = orderDao.findOrderInCartStatus(status);
+        return order;
+    }
+
 
     @GetMapping("/order/orderdetail")
     public ModelAndView orderDetail() {
@@ -81,4 +85,6 @@ public class OrderController {
         model.addAttribute("order", order);
         return "orderDetails";
     }
+
+
 }

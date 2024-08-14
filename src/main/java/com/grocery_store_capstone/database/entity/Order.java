@@ -2,10 +2,10 @@ package com.grocery_store_capstone.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+
 
 @Getter
 @Setter
@@ -14,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Table(name = "orders")
 public class Order {
+
 
     @Getter
     @Id
@@ -54,11 +55,14 @@ public class Order {
 
     }
 
+
     public BigDecimal getTotal() {
         return orderDetails.stream()
                 .map(od -> BigDecimal.valueOf(od.getQuantityOrdered()).multiply(od.getProduct().getProductPricePerItem()))
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
+
+
 
 
 

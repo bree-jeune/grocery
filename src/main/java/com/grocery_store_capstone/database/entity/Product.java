@@ -2,17 +2,21 @@ package com.grocery_store_capstone.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.util.Set;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
 
-@Setter
-@Getter
 @Entity
-@ToString
+@Table(name = "product")
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "product")
+@ToString
 public class Product {
 
     @Id
@@ -20,29 +24,19 @@ public class Product {
     @Column(name = "product_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "product_category_id", nullable = false)
-    private Category category;
-
-    @Setter
-    @Getter
     @Column(name = "product_code", nullable = false)
     private String productCode;
 
-    @Getter
-    @Setter
     @Column(name = "product_title", nullable = false)
     private String productTitle;
 
-    @Setter
-    @Getter
     @Column(name = "product_price_per_item", columnDefinition = "DECIMAL(10, 2)", nullable = false)
     private BigDecimal productPricePerItem;
 
     @Column(name = "product_stock", columnDefinition = "INT", nullable = false)
     private Integer productStock;
 
-    @Column(name = "product_description", columnDefinition="TEXT")
+    @Column(name = "product_description", columnDefinition = "TEXT")
     private String productDescription;
 
     @Column(name = "product_mfd_date")
@@ -55,7 +49,6 @@ public class Product {
     private String productCompany;
 
     @Setter
-    @Getter
     @Column(name = "product_image_url")
     private String productImageUrl;
 
@@ -65,10 +58,10 @@ public class Product {
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
-    private Set<Category> categories;
+    private Set<Category> categories = new HashSet<>();
 
 
-    public Product(String productCode, String productTitle, BigDecimal productPricePerItem, Integer productStock, String productDescription, String productMfdDate, String productExpDate, String productCompany, String productImageUrl, Category category) {
+    public Product(String productCode, String productTitle, BigDecimal productPricePerItem, Integer productStock, String productDescription, String productMfdDate, String productExpDate, String productCompany, String productImageUrl) {
         this.productCode = productCode;
         this.productTitle = productTitle;
         this.productPricePerItem = productPricePerItem;
@@ -78,7 +71,29 @@ public class Product {
         this.productExpDate = productExpDate;
         this.productCompany = productCompany;
         this.productImageUrl = productImageUrl;
-        this.category = category;
     }
 
+    @PrePersist
+    public void ensureProductCode() {
+        if (this.productCode == null || this.productCode.isEmpty()) {
+            this.productCode = "PRD-" + UUID.randomUUID().toString().substring(0, 8);
+        }
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.productImageUrl = imageUrl;
+    }
+
+    public void setProductMfdDate(LocalDate mfdDate) {
+        this.productMfdDate = mfdDate.format(DateTimeFormatter.ISO_LOCAL_DATE);
+    }
+
+    public void setProductExpDate(LocalDate expDate) {
+        this.productExpDate = expDate.format(DateTimeFormatter.ISO_LOCAL_DATE);
+    }
+
+
+    public Long getProductId() {
+        return id;
+    }
 }

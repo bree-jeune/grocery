@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface DepartmentDAO extends JpaRepository<Department, Integer> {
+public interface DepartmentDAO extends JpaRepository<Department, Long> {
     List<Department> findByName(String name);
 }
