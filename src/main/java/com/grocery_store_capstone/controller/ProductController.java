@@ -23,26 +23,25 @@ public class ProductController {
     private final ProductService productService;
     private final ProductDAO productDao;
 
-    @GetMapping("/product/list")
-    public String showProductList(Model model) {
-        // Add products to the model and return the view name
-        return "productList"; // Ensure "productList" is the correct view template
-    }
-
-
-    @GetMapping("/addProductWithCategories")
-    public String addProductWithCategories() {
-        productService.addProductWithCategories();
-        return "redirect:/product/list"; // Redirect to product listing page after adding
-    }
-
     @Autowired
     public ProductController(ProductService productService, ProductDAO productDao) {
         this.productService = productService;
         this.productDao = productDao;
     }
 
-    // Method to get products by category
+    @GetMapping("/list")
+    public String listProducts(Model model) {
+        List<Product> products = productService.getAllProducts();
+        model.addAttribute("products", products);
+        return "product-list";
+    }
+
+    @GetMapping("/addProductWithCategories")
+    public String addProductWithCategories() {
+        productService.addProductWithCategories();
+        return "redirect:/product/list";
+    }
+
     @GetMapping("/byCategory")
     public String getProductsByCategory(@RequestParam("categoryId") Long categoryId, Model model) {
         List<Product> products = productService.getProductsByCategory(categoryId);
@@ -50,7 +49,6 @@ public class ProductController {
         return "product/list";
     }
 
-    // Display the form to create a new product
     @GetMapping("/create")
     public String showCreateProductForm(Model model) {
         CreateProductFormBean form = new CreateProductFormBean();
@@ -58,7 +56,6 @@ public class ProductController {
         return "product/create";
     }
 
-    // Handle the form submission for creating a new product
     @PostMapping("/create")
     public String submitCreateProductForm(@Valid @ModelAttribute("form") CreateProductFormBean form, BindingResult result) {
         if (result.hasErrors()) {
@@ -76,7 +73,6 @@ public class ProductController {
         return "redirect:/product/list";
     }
 
-    // Display the form to edit an existing product
     @GetMapping("/edit")
     public ModelAndView editProduct(@RequestParam(required = false) Long id) {
         ModelAndView response = new ModelAndView("product/create");
@@ -100,7 +96,6 @@ public class ProductController {
         return response;
     }
 
-    // Handle the form submission for updating an existing product
     @PostMapping("/editSubmit")
     public ModelAndView editProductSubmit(@Valid @ModelAttribute("form") CreateProductFormBean form, BindingResult bindingResult) {
         ModelAndView response = new ModelAndView("product/create");

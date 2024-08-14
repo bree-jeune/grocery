@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Shop - The Neighborhood Nook</title>
 
-    <!-- CSS Links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/shop.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css">
@@ -28,6 +27,7 @@
                 </p>
             </div>
             <div class="fruits_owl-carousel owl-carousel owl-theme">
+                <!-- Item 1 -->
                 <div class="item">
                     <div class="box">
                         <div class="img-box">
@@ -37,16 +37,81 @@
                             <h4>Apple</h4>
                             <h6 class="price">
                                 <span class="new_price">$4.25</span>
-                                <span class="old_price">$5</span>
                             </h6>
                             <a href="${pageContext.request.contextPath}/cart">
                                 <i class="fa fa-shopping-basket" aria-hidden="true"></i> Add To Cart
                             </a>
-
                         </div>
                     </div>
                 </div>
-                <!-- Additional items here -->
+                <!-- Item 2 -->
+                <div class="item">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="${pageContext.request.contextPath}/resources/images/f2.png" alt="Banana">
+                        </div>
+                        <div class="detail-box">
+                            <h4>Banana</h4>
+                            <h6 class="price">
+                                <span class="new_price">$3.50</span>
+                            </h6>
+                            <a href="${pageContext.request.contextPath}/cart">
+                                <i class="fa fa-shopping-basket" aria-hidden="true"></i> Add To Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="item">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="${pageContext.request.contextPath}/resources/images/f3.png" alt="Orange">
+                        </div>
+                        <div class="detail-box">
+                            <h4>Orange</h4>
+                            <h6 class="price">
+                                <span class="new_price">$4.00</span>
+                            </h6>
+                            <a href="${pageContext.request.contextPath}/cart">
+                                <i class="fa fa-shopping-basket" aria-hidden="true"></i> Add To Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="item">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="${pageContext.request.contextPath}/resources/images/f4.png" alt="Grapes">
+                        </div>
+                        <div class="detail-box">
+                            <h4>Grapes</h4>
+                            <h6 class="price">
+                                <span class="new_price">$5.00</span>
+                            </h6>
+                            <a href="${pageContext.request.contextPath}/cart">
+                                <i class="fa fa-shopping-basket" aria-hidden="true"></i> Add To Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="item">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="${pageContext.request.contextPath}/resources/images/f5.png" alt="Pineapple">
+                        </div>
+                        <div class="detail-box">
+                            <h4>Pineapple</h4>
+                            <h6 class="price">
+                                <span class="new_price">$6.50</span>
+                            </h6>
+                            <a href="${pageContext.request.contextPath}/cart">
+                                <i class="fa fa-shopping-basket" aria-hidden="true"></i> Add To Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="btn-box">
                 <a href="#">View More Fruits</a>

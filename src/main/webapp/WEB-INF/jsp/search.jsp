@@ -2,7 +2,6 @@
 
 <jsp:include page="include/header.jsp" />
 
-<!-- a page header -->
 <section style="background-color:gray">
     <div class="container">
         <div class="row pt-5 pb-5">
@@ -12,7 +11,6 @@
 </section>
 
 
-<!-- a search form -->
 <section>
     <div class="container">
         <div class="row justify-content-center pt-5 pb-3">

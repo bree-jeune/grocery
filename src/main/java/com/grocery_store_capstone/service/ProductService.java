@@ -72,4 +72,12 @@ public class ProductService {
     public void processProduct(Product product) {
         logger.info("Processing product with ID: {}", product.getId());
     }
+
+    public List<Product> searchProducts(String query) {
+        return productDao.findByProductTitleContainingIgnoreCase(query);
+    }
+
+    public List<Product> getAllProducts() {
+        return productDao.findAll();
+    }
 }
