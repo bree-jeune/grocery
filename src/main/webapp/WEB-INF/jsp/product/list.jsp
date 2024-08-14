@@ -35,5 +35,27 @@
         </tbody>
     </table>
 </div>
+
+<div class="container">
+    <h1>Products in Category</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="product" items="${products}">
+            <tr>
+                <td>${product.productTitle}</td>
+                <td>${product.productDescription}</td>
+                <td>${product.productPricePerItem}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

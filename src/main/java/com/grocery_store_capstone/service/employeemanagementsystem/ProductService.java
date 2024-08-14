@@ -24,4 +24,8 @@ public class ProductService {
         product.setCategories(categories);
         productDao.save(product);
     }
+
+    public List<Product> getProductsByCategory(Long categoryId) {
+        return productDao.findProductsByCategory(categoryId);
+    }
 }

@@ -3,6 +3,7 @@ package com.grocery_store_capstone.controller;
 import com.grocery_store_capstone.database.dao.ProductDAO;
 import com.grocery_store_capstone.database.entity.Product;
 import com.grocery_store_capstone.form.CreateProductFormBean;
+import com.grocery_store_capstone.service.employeemanagementsystem.ProductService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,16 +13,28 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Slf4j
 @Controller
 @RequestMapping("/product")
 public class ProductController {
 
+    private final ProductService productService;
     private final ProductDAO productDao;
 
     @Autowired
-    public ProductController(ProductDAO productDao) {
+    public ProductController(ProductService productService, ProductDAO productDao) {
+        this.productService = productService;
         this.productDao = productDao;
+    }
+
+    // Method to get products by category
+    @GetMapping("/byCategory")
+    public String getProductsByCategory(@RequestParam("categoryId") Long categoryId, Model model) {
+        List<Product> products = productService.getProductsByCategory(categoryId);
+        model.addAttribute("products", products);
+        return "product/list";
     }
 
     // Display the form to create a new product
